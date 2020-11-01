@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Temalabor-2020-Java_alapu_fejlesztoi_eszkozok_etterem.iml" filepath="$PROJECT_DIR$/.idea/Temalabor-2020-Java_alapu_fejlesztoi_eszkozok_etterem.iml" />
-      <module fileurl="file://$PROJECT_DIR$/OnlineEtterem/temalabor.iml" filepath="$PROJECT_DIR$/OnlineEtterem/temalabor.iml" />
-    </modules>
-  </component>
-</project>
