@@ -3,17 +3,17 @@ package onlinerestaurant.model;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
 import java.util.List;
 
 @Getter
 @Setter
-@Entity
 public class Appetizer extends Meal {
-    private String consistency;
-    private List<String> contain;
+    private final String consistency;
+    private final List<String> contains;
 
-    public Appetizer(String name, int price, Category category) {
-        super(name, price, category);
+    public Appetizer(long id, String name, int price, Category category, String consistency, List<String> contains) {
+        super(id, name, price, category);
+        this.consistency=consistency;
+        this.contains = contains;
     }
 }

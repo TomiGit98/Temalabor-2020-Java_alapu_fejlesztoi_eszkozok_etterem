@@ -15,11 +15,11 @@ public class Person {
     @GeneratedValue
     private int ID;
 
-    private String firstname;
-    private String surename;
-    private String password;
-    private String email;
-    private String address;
+    private final String firstname;
+    private final String surename;
+    private final String password;
+    private final String email;
+    private final String address;
 
     public Person(String firstname, String surename, String password, String email, String address){
         this.firstname = firstname;
