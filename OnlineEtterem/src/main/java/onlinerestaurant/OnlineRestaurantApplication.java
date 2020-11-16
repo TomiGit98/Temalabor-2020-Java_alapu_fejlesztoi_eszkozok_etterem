@@ -1,9 +1,7 @@
 package onlinerestaurant;
 
-import onlinerestaurant.model.Category;
 import onlinerestaurant.service.MealService;
 import onlinerestaurant.service.PersonService;
-import onlinerestaurant.service.ShoppingCartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -11,9 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class OnlineRestaurantApplication implements CommandLineRunner {
-
-  @Autowired
-  ShoppingCartService shoppingCartService;
+  
 
   @Autowired
   MealService mealService;

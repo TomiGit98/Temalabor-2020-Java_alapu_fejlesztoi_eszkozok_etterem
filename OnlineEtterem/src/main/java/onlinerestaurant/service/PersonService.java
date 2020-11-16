@@ -15,23 +15,22 @@ public class PersonService {
     @Transactional
     public void addNewUser(String firstname, String surename, String password, String email, String address){
         Person person = new Person(firstname, surename, password, email, address);
-        personRepository.insert(person);
+        personRepository.save(person);
     }
 
     @Transactional
-    public void deleteUser(String surename, String firstname){
-        Person p = personRepository.findByName(surename, firstname);
+    public void deleteUser(String surName, String firstName){
+        Person p = personRepository.findByFirstName(firstName);
         if(p != null)
             personRepository.delete(p);
     }
 
     @Transactional
     public void updateUser(Person p, Person p2){
-        Person person = personRepository.findByName(p.getSurename(), p.getFirstname());
+        Person person = personRepository.findByFirstName(p.getFirstName());
         if(person != null) {
             personRepository.delete(p);
-            personRepository.insert(p2);
+            personRepository.save(p2);
         }
     }
-
 }
