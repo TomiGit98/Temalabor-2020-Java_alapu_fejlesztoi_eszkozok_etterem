@@ -1,0 +1,16 @@
+D:\GITHUB\etterem\Temalabor-2020-Java_alapu_fejlesztoi_eszkozok_etterem\OnlineEtterem\src\main\java\onlinerestaurant\model\Dessert.java
+D:\GITHUB\etterem\Temalabor-2020-Java_alapu_fejlesztoi_eszkozok_etterem\OnlineEtterem\src\main\java\onlinerestaurant\model\Appetizer.java
+D:\GITHUB\etterem\Temalabor-2020-Java_alapu_fejlesztoi_eszkozok_etterem\OnlineEtterem\src\main\java\onlinerestaurant\model\MainDish.java
+D:\GITHUB\etterem\Temalabor-2020-Java_alapu_fejlesztoi_eszkozok_etterem\OnlineEtterem\src\main\java\onlinerestaurant\OnlineRestaurantApplication.java
+D:\GITHUB\etterem\Temalabor-2020-Java_alapu_fejlesztoi_eszkozok_etterem\OnlineEtterem\src\main\java\onlinerestaurant\repository\MealRepository.java
+D:\GITHUB\etterem\Temalabor-2020-Java_alapu_fejlesztoi_eszkozok_etterem\OnlineEtterem\src\main\java\onlinerestaurant\model\Category.java
+D:\GITHUB\etterem\Temalabor-2020-Java_alapu_fejlesztoi_eszkozok_etterem\OnlineEtterem\src\main\java\onlinerestaurant\model\CartItem.java
+D:\GITHUB\etterem\Temalabor-2020-Java_alapu_fejlesztoi_eszkozok_etterem\OnlineEtterem\src\main\java\onlinerestaurant\model\Person.java
+D:\GITHUB\etterem\Temalabor-2020-Java_alapu_fejlesztoi_eszkozok_etterem\OnlineEtterem\src\main\java\onlinerestaurant\model\Meal.java
+D:\GITHUB\etterem\Temalabor-2020-Java_alapu_fejlesztoi_eszkozok_etterem\OnlineEtterem\src\main\java\onlinerestaurant\model\ShoppingCart.java
+D:\GITHUB\etterem\Temalabor-2020-Java_alapu_fejlesztoi_eszkozok_etterem\OnlineEtterem\src\main\java\onlinerestaurant\repository\ShoppingCartRepository.java
+D:\GITHUB\etterem\Temalabor-2020-Java_alapu_fejlesztoi_eszkozok_etterem\OnlineEtterem\src\main\java\onlinerestaurant\service\MealService.java
+D:\GITHUB\etterem\Temalabor-2020-Java_alapu_fejlesztoi_eszkozok_etterem\OnlineEtterem\src\main\java\onlinerestaurant\service\PersonService.java
+D:\GITHUB\etterem\Temalabor-2020-Java_alapu_fejlesztoi_eszkozok_etterem\OnlineEtterem\src\main\java\onlinerestaurant\repository\CategoryRepository.java
+D:\GITHUB\etterem\Temalabor-2020-Java_alapu_fejlesztoi_eszkozok_etterem\OnlineEtterem\src\main\java\onlinerestaurant\repository\PersonRepository.java
+D:\GITHUB\etterem\Temalabor-2020-Java_alapu_fejlesztoi_eszkozok_etterem\OnlineEtterem\src\main\java\onlinerestaurant\service\ShoppingCartService.java

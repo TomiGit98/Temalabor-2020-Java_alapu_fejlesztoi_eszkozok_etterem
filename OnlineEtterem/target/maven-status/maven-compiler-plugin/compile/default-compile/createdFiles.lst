@@ -1,0 +1,16 @@
+onlinerestaurant\model\CartItem.class
+onlinerestaurant\model\MainDish.class
+onlinerestaurant\model\Meal.class
+onlinerestaurant\service\PersonService.class
+onlinerestaurant\repository\PersonRepository.class
+onlinerestaurant\model\Dessert.class
+onlinerestaurant\repository\CategoryRepository.class
+onlinerestaurant\OnlineRestaurantApplication.class
+onlinerestaurant\model\Person.class
+onlinerestaurant\model\ShoppingCart.class
+onlinerestaurant\model\Appetizer.class
+onlinerestaurant\repository\MealRepository.class
+onlinerestaurant\service\MealService.class
+onlinerestaurant\repository\ShoppingCartRepository.class
+onlinerestaurant\service\ShoppingCartService.class
+onlinerestaurant\model\Category.class

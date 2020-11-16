@@ -13,10 +13,9 @@ public class MealService {
     @Autowired
     MealRepository mealRepository;
 
-    public List<Meal> findMealByCategory(Category category){
-        List<Meal> meals;
-        meals = mealRepository.findByCategory(category);
-        return meals;
+    public Meal findMealById(int id){
+        Meal meal = mealRepository.findById(id);
+        return meal;
     }
 
     public Meal findMealByName(String name){
@@ -24,10 +23,9 @@ public class MealService {
         return meal;
     }
 
-    public Meal findMealById(int id){
-        Meal meal = mealRepository.findById(id);
-        return meal;
+    public List<Meal> findMealByCategory(Category category){
+        List<Meal> meals;
+        meals = mealRepository.findByCategory(category);
+        return meals;
     }
-
-
 }

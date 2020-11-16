@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import java.util.ArrayList;
 import java.util.Collection;
 
 @Getter
@@ -16,7 +17,7 @@ public class Category {
 
     @Id
     @GeneratedValue
-    private int id;
+    private long id;
 
     private String name;
 
@@ -26,4 +27,12 @@ public class Category {
     public Category(String name){
         this.name = name;
     }
+
+    public Collection<Meal> getAllMeals(){
+        if (this.meals == null)
+            this.meals = new ArrayList<>();
+        return this.meals;
+    }
+
+
 }

@@ -13,7 +13,7 @@ import javax.persistence.Id;
 public class Person {
     @Id
     @GeneratedValue
-    private int ID;
+    private int id;
 
     private final String firstname;
     private final String surename;
@@ -27,5 +27,13 @@ public class Person {
         this.password = password;
         this.email = email;
         this.address = address;
+    }
+
+    public String getFirstname(){
+        return this.firstname;
+    }
+
+    public String getSurename(){
+        return this.surename;
     }
 }

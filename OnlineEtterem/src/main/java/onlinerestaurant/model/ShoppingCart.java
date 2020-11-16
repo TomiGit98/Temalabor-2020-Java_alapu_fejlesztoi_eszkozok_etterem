@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import java.util.ArrayList;
 import java.util.Collection;
 
 @Getter
@@ -15,14 +16,19 @@ import java.util.Collection;
 public class ShoppingCart {
     @Id
     @GeneratedValue
-    private int id;
+    private long id;
 
     @OneToMany(mappedBy = "meals")
-    private Collection<CartItem> meals;
-
-
+    private Collection<Meal> meals;
 
     public ShoppingCart(){
 
+    }
+
+    public Collection<Meal> getMeals() {
+        if (this.meals == null)
+            this.meals = new ArrayList<>();
+
+        return this.meals;
     }
 }
