@@ -1,5 +1,4 @@
 import onlinerestaurant.OnlineRestaurantApplication;
-import onlinerestaurant.model.Category;
 import onlinerestaurant.repository.CategoryRepository;
 import onlinerestaurant.service.InitDataService;
 import org.junit.Before;
@@ -27,14 +26,13 @@ public class CategoryTest {
     CategoryRepository categoryRepository;
 
     @Before
-    public void init(){
+    public void init() {
         initDataService.init();
     }
 
     @Test
-    public void testCategory(){
-
-        assertTrue(!categoryRepository.findByName("Pizzas").getAllMeals().isEmpty());;
-
+    public void testCategory() {
+        assertTrue(!categoryRepository.findByName("Pizzas").getAllMeals().isEmpty());
+        ;
     }
 }

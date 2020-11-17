@@ -1,13 +1,11 @@
 package onlinerestaurant.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 
 
 @Getter
@@ -23,8 +21,11 @@ public class Person {
     private String password;
     private String email;
     private String address;
+    @Transient
+    private ShoppingCart shoppingCart = new ShoppingCart();
 
-    public Person(String firstName, String surName, String password, String email, String address){
+    public Person(String firstName, String surName, String password, String email, String address) {
+
         this.firstName = firstName;
         this.surName = surName;
         this.password = password;
@@ -32,8 +33,10 @@ public class Person {
         this.address = address;
     }
 
+
     public Person() {
     }
+
 
     public int getId() {
         return id;
@@ -57,5 +60,9 @@ public class Person {
 
     public String getAddress() {
         return address;
+    }
+
+    public ShoppingCart getShoppingCart() {
+        return shoppingCart;
     }
 }

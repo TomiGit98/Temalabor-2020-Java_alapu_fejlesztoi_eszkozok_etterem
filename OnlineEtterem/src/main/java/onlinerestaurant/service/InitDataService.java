@@ -23,13 +23,13 @@ public class InitDataService {
         this.mealRepository = mealRepository;
         this.categoryRepository = categoryRepository;
         this.personRepository = personRepository;
+
     }
 
     public void init(){
         Person jI = new Person("Ivan", "Jabak", "jakabi" ,"jabaki@gmail.com","pizza utca 1");
-
         Category foEtel = new Category("Pizzas");
-        Pizza pizza = new Pizza("Pizza", 2990, foEtel,"Salami", 1);
+        Pizza pizza = new Pizza("Pizza", 2990, foEtel,"Salami");
         foEtel.getAllMeals().add(pizza);
         personRepository.save(jI);
         categoryRepository.save(foEtel);

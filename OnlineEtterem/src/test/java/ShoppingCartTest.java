@@ -1,8 +1,11 @@
 import onlinerestaurant.OnlineRestaurantApplication;
+import onlinerestaurant.model.Category;
 import onlinerestaurant.model.Person;
+import onlinerestaurant.model.Pizza;
+import onlinerestaurant.repository.CategoryRepository;
 import onlinerestaurant.repository.PersonRepository;
 import onlinerestaurant.service.InitDataService;
-import onlinerestaurant.service.PersonService;
+import onlinerestaurant.service.ShoppingCartService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,49 +13,37 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import javax.transaction.Transactional;
-
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
-
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = OnlineRestaurantApplication.class)
 @AutoConfigureTestDatabase
-@Transactional
-public class PersonTest {
+public class ShoppingCartTest {
 
     @Autowired
     InitDataService initDataService;
 
     @Autowired
+    ShoppingCartService shoppingCartService;
+
+    @Autowired
     PersonRepository personRepository;
 
     @Autowired
-    PersonService personService;
+    CategoryRepository categoryRepository;
+
+
 
     @Before
-    public void initData(){
+    public void init(){
         initDataService.init();
     }
 
     @Test
-    public void testRepo(){
+    public void testAddToCart(){
         Person jakabIvan = personRepository.findByFirstName("Ivan");
-        assertTrue(jakabIvan.getSurName().equals("Jabak"));
-    }
-
-    @Test
-    public void testDeleteUser(){
-        personService.deleteUser("Jabak","Ivan");
-        Person jakabIvan = personRepository.findByFirstName("Ivan");
-        assertTrue(jakabIvan == null);
-    }
-
-
-    @Test
-    public void testShoppingCart(){
-        Person jakabIvan = personRepository.findByFirstName("Ivan");
-        assertTrue(!jakabIvan.getShoppingCart().getMeals().isEmpty());
+        Category Pizzas = categoryRepository.findByName("Pizzas");
+        Pizza pizza = new Pizza("Hawaii Pizza",2990,Pizzas,"Ananasz");
+        shoppingCartService.addToCart(jakabIvan,pizza,3);
+        assertTrue(jakabIvan.getShoppingCart().getMeals().get(pizza).intValue() == 3 );
     }
 }

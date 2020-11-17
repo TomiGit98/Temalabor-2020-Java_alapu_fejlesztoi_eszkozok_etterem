@@ -24,6 +24,9 @@ public class Category {
     @OneToMany(mappedBy = "category")
     private Collection<Meal> meals;
 
+    public Category() {
+    }
+
     public Category(String name){
         this.name = name;
     }

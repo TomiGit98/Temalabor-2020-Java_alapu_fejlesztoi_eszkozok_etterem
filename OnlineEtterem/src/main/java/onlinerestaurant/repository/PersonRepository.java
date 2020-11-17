@@ -10,5 +10,4 @@ public interface PersonRepository extends JpaRepository<Person, Long> {
     public Person findById(int id);
     public Person save(Person person);
     public void delete(Person person);
-
 }

@@ -11,11 +11,9 @@ import javax.persistence.Entity;
 public class Pizza extends Meal{
 
     private String seasoning;
-    private int number;
 
-    public Pizza(String name, int price, Category category, String seasoning, int number) {
+    public Pizza(String name, int price, Category category, String seasoning) {
         super(name, price, category);
         this.seasoning = seasoning;
-        this.number = number;
     }
 }

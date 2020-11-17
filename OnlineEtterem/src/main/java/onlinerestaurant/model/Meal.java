@@ -16,7 +16,6 @@ public class Meal {
     @Id
     @GeneratedValue
     private long id;
-
     private String name;
     private int price;
 
