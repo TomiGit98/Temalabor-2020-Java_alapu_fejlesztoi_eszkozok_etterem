@@ -1,5 +1,5 @@
 import onlinerestaurant.OnlineRestaurantApplication;
-import onlinerestaurant.model.Pizza;
+import onlinerestaurant.model.meals.Pizza;
 import onlinerestaurant.repository.MealRepository;
 import onlinerestaurant.service.InitDataService;
 import onlinerestaurant.service.MealService;

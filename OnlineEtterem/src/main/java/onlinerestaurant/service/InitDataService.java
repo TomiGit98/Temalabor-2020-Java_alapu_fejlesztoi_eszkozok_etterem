@@ -3,7 +3,7 @@ package onlinerestaurant.service;
 import lombok.Getter;
 import onlinerestaurant.model.Category;
 import onlinerestaurant.model.Person;
-import onlinerestaurant.model.Pizza;
+import onlinerestaurant.model.meals.Pizza;
 import onlinerestaurant.repository.CategoryRepository;
 import onlinerestaurant.repository.MealRepository;
 import onlinerestaurant.repository.PersonRepository;

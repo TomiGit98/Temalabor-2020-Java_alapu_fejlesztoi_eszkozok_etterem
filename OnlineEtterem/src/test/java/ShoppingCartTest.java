@@ -1,7 +1,7 @@
 import onlinerestaurant.OnlineRestaurantApplication;
 import onlinerestaurant.model.Category;
 import onlinerestaurant.model.Person;
-import onlinerestaurant.model.Pizza;
+import onlinerestaurant.model.meals.Pizza;
 import onlinerestaurant.repository.CategoryRepository;
 import onlinerestaurant.repository.PersonRepository;
 import onlinerestaurant.service.InitDataService;

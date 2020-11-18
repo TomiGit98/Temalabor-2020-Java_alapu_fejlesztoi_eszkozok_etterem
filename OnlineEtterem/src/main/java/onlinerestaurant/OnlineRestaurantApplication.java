@@ -1,5 +1,6 @@
 package onlinerestaurant;
 
+import onlinerestaurant.service.InitDataService;
 import onlinerestaurant.service.MealService;
 import onlinerestaurant.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +10,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class OnlineRestaurantApplication implements CommandLineRunner {
-  
+
+  @Autowired
+  InitDataService initDataService;
 
   @Autowired
   MealService mealService;
@@ -23,6 +26,7 @@ public class OnlineRestaurantApplication implements CommandLineRunner {
 
   @Override
   public void run(String... args) throws Exception {
+    initDataService.init();
 //    shoppingCartService.addMealToShoppingCart("AAA");
 //    mealService.findMealByCategory(new Category("AAA"));
 //    personService.addNewUserToTheShop("FirstName", "SureName", "Password", "email@email.com", "Budapest");

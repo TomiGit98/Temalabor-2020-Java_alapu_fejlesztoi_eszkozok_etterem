@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -22,7 +24,7 @@ public class Category {
     private String name;
 
     @OneToMany(mappedBy = "category")
-    private Collection<Meal> meals;
+    private Set<Meal> meals;
 
     public Category() {
     }
@@ -31,9 +33,14 @@ public class Category {
         this.name = name;
     }
 
-    public Collection<Meal> getAllMeals(){
+    public Category(String name, Set<Meal> meals) {
+        this.name = name;
+        this.meals = meals;
+    }
+
+    public Set<Meal> getAllMeals(){
         if (this.meals == null)
-            this.meals = new ArrayList<>();
+            this.meals = new HashSet();
         return this.meals;
     }
 
