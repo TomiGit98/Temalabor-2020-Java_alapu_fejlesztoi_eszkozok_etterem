@@ -28,10 +28,12 @@ public class InitDataService {
 
     public void init(){
         Person jI = new Person("Ivan", "Jabak", "jakabi" ,"jabaki@gmail.com","pizza utca 1");
+        /*Person testUser = new Person("TestFirstName", "TestSurName", "testpassword" ,"test@example.com","Budapest, XI.kerület Fő út 20.");*/
         Category foEtel = new Category("Pizzas");
         Pizza pizza = new Pizza("Pizza", 2990, foEtel,"Salami");
         foEtel.getAllMeals().add(pizza);
         personRepository.save(jI);
+        //personRepository.save(testUser);
         categoryRepository.save(foEtel);
         mealRepository.save(pizza);
     }

@@ -1,5 +1,6 @@
 package onlinerestaurant;
 
+import onlinerestaurant.repository.PersonRepository;
 import onlinerestaurant.service.InitDataService;
 import onlinerestaurant.service.MealService;
 import onlinerestaurant.service.PersonService;
@@ -12,13 +13,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class OnlineRestaurantApplication implements CommandLineRunner {
 
   @Autowired
+  PersonRepository personRepository;
+
+  @Autowired
+  PersonService personService;
+
+  @Autowired
   InitDataService initDataService;
 
   @Autowired
   MealService mealService;
-
-  @Autowired
-  PersonService personService;
 
   public static void main(String[] args) {
     SpringApplication.run(OnlineRestaurantApplication.class, args);

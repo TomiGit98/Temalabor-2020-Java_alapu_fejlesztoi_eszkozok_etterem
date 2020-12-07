@@ -1,4 +1,4 @@
-package onlinerestaurant.model.dto;
+package onlinerestaurant.dto;
 
 public class MealDTO {
     private String name;

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public interface PersonRepository extends JpaRepository<Person, Long> {
     public Person findByFirstName(String firstName);
+    public Person findByEmail(String email);
     public Person findById(int id);
     public Person save(Person person);
     public void delete(Person person);

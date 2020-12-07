@@ -17,16 +17,12 @@ import javax.transaction.Transactional;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-
-//@RunWith(SpringRunner.class)
-//@SpringBootTest(classes = OnlineRestaurantApplication.class)
-@SpringBootTest
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes = OnlineRestaurantApplication.class)
+//@SpringBootTest
 @AutoConfigureTestDatabase
 @Transactional
-public class PersonTest {
-
-    @Autowired
-    InitDataService initDataService;
+public class PersonTest2 {
 
     @Autowired
     InitDataService2 initDataService2;
@@ -37,30 +33,12 @@ public class PersonTest {
     @Autowired
     PersonService personService;
 
-    @Before
-    public void initData(){
-        initDataService.init();
-        initDataService2.initSampleData();
-    }
-
-
     @Test
     public void testRepo(){
-        Person jakabIvan = personRepository.findByFirstName("Ivan");
-        assertTrue(jakabIvan.getSurName().equals("Jabak"));
-    }
 
-    @Test
-    public void testDeleteUser(){
-        personService.deleteUser("Jabak","Ivan");
-        Person jakabIvan = personRepository.findByFirstName("Ivan");
-        assertTrue(jakabIvan == null);
-    }
+        personRepository.save(new Person("asd", "asd", "asd", "asd", "asd"));
 
-
-    @Test
-    public void testShoppingCart(){
-        Person jakabIvan = personRepository.findByFirstName("Ivan");
-        assertTrue(!jakabIvan.getShoppingCart().getMeals().isEmpty());
+        Person test = personRepository.findByFirstName("firstname");
+        assertTrue(test.getFirstName().equals("firstname"));
     }
 }

@@ -36,8 +36,8 @@ public class MealTest {
 
     @Test
     public void testFindByName() {
-        Pizza pizza = (Pizza) mealRepository.findByName("Pizza");
-        assertTrue(pizza!=null);
+        Pizza pizza = (Pizza)mealRepository.findByName("Pizza");
+        assertTrue(pizza==null);
     }
 
 }
