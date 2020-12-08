@@ -28,4 +28,8 @@ public class Meal {
 
     @ManyToOne
     private Category category;
+
+    public Meal() {
+
+    }
 }

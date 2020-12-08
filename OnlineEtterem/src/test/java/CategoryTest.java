@@ -1,4 +1,5 @@
 import onlinerestaurant.OnlineRestaurantApplication;
+import onlinerestaurant.model.Category;
 import onlinerestaurant.repository.CategoryRepository;
 import onlinerestaurant.service.InitDataService;
 import org.junit.Before;
@@ -15,7 +16,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = OnlineRestaurantApplication.class)
-@AutoConfigureTestDatabase
 @Transactional
 public class CategoryTest {
 
@@ -32,7 +32,8 @@ public class CategoryTest {
 
     @Test
     public void testCategory() {
-        assertTrue(!categoryRepository.findByName("Pizzas").getAllMeals().isEmpty());
+        Category c = categoryRepository.findByName("Pizzas");
+        assertTrue(!c.getAllMeals().isEmpty());
         ;
     }
 }

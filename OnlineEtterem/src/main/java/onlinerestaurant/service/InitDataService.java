@@ -33,7 +33,6 @@ public class InitDataService {
         Pizza pizza = new Pizza("Pizza", 2990, foEtel,"Salami");
         foEtel.getAllMeals().add(pizza);
         personRepository.save(jI);
-        //personRepository.save(testUser);
         categoryRepository.save(foEtel);
         mealRepository.save(pizza);
     }

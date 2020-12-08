@@ -21,6 +21,7 @@ public class MealService {
     public Meal findMealByName(String name){
         Meal meal = mealRepository.findByName(name);
         return meal;
+
     }
 
     public List<Meal> findMealByCategory(Category category){

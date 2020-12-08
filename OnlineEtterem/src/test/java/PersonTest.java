@@ -17,10 +17,9 @@ import javax.transaction.Transactional;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-
-//@RunWith(SpringRunner.class)
-//@SpringBootTest(classes = OnlineRestaurantApplication.class)
-@SpringBootTest
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes = OnlineRestaurantApplication.class)
+//@SpringBootTest
 @AutoConfigureTestDatabase
 @Transactional
 public class PersonTest {
@@ -29,23 +28,19 @@ public class PersonTest {
     InitDataService initDataService;
 
     @Autowired
-    InitDataService2 initDataService2;
-
-    @Autowired
     PersonRepository personRepository;
 
     @Autowired
     PersonService personService;
 
     @Before
-    public void initData(){
+    public void init(){
         initDataService.init();
-        initDataService2.initSampleData();
     }
-
 
     @Test
     public void testRepo(){
+
         Person jakabIvan = personRepository.findByFirstName("Ivan");
         assertTrue(jakabIvan.getSurName().equals("Jabak"));
     }
@@ -55,12 +50,5 @@ public class PersonTest {
         personService.deleteUser("Jabak","Ivan");
         Person jakabIvan = personRepository.findByFirstName("Ivan");
         assertTrue(jakabIvan == null);
-    }
-
-
-    @Test
-    public void testShoppingCart(){
-        Person jakabIvan = personRepository.findByFirstName("Ivan");
-        assertTrue(!jakabIvan.getShoppingCart().getMeals().isEmpty());
     }
 }

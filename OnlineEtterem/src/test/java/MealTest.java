@@ -1,4 +1,5 @@
 import onlinerestaurant.OnlineRestaurantApplication;
+import onlinerestaurant.model.Meal;
 import onlinerestaurant.model.meals.Pizza;
 import onlinerestaurant.repository.MealRepository;
 import onlinerestaurant.service.InitDataService;
@@ -12,6 +13,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import javax.transaction.Transactional;
+import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = OnlineRestaurantApplication.class)
@@ -36,8 +38,8 @@ public class MealTest {
 
     @Test
     public void testFindByName() {
-        Pizza pizza = (Pizza)mealRepository.findByName("Pizza");
-        assertTrue(pizza==null);
+        Pizza pizza = (Pizza) mealRepository.findByName("Pizza");
+        assertTrue(pizza!=null);
     }
 
 }
