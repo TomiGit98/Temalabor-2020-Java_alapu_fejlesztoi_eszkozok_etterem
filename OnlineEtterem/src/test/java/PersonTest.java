@@ -25,22 +25,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class PersonTest {
 
     @Autowired
-    InitDataService initDataService;
-
-    @Autowired
     PersonRepository personRepository;
 
     @Autowired
     PersonService personService;
 
-    @Before
-    public void init(){
-        initDataService.init();
-    }
 
     @Test
     public void testRepo(){
-
         Person jakabIvan = personRepository.findByFirstName("Ivan");
         assertTrue(jakabIvan.getSurName().equals("Jabak"));
     }

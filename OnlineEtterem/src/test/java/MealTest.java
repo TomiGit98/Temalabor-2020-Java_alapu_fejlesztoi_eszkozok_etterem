@@ -22,19 +22,10 @@ import java.util.List;
 public class MealTest {
 
     @Autowired
-    InitDataService initDataService;
-
-    @Autowired
     MealRepository mealRepository;
 
     @Autowired
     MealService mealService;
-
-    @Before
-    public void init() {
-        initDataService.init();
-    }
-
 
     @Test
     public void testFindByName() {

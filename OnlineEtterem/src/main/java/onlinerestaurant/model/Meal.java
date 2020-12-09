@@ -18,11 +18,12 @@ public class Meal {
     private long id;
     private String name;
     private int price;
+    private String photoUrl;
 
-    public Meal(String name, int price, Category category){
-        super();
+    public Meal(String name, int price, String photoUrl, Category category) {
         this.name = name;
         this.price = price;
+        this.photoUrl = photoUrl;
         this.category = category;
     }
 
@@ -30,6 +31,7 @@ public class Meal {
     private Category category;
 
     public Meal() {
-
     }
+
+
 }

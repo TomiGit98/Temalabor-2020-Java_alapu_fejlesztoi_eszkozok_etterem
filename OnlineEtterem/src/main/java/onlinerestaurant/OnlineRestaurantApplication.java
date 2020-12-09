@@ -30,6 +30,7 @@ public class OnlineRestaurantApplication implements CommandLineRunner {
 
   @Override
   public void run(String... args) throws Exception {
+    initDataService.init();
 //    shoppingCartService.addMealToShoppingCart("AAA");
 //    mealService.findMealByCategory(new Category("AAA"));
 //    personService.addNewUserToTheShop("FirstName", "SureName", "Password", "email@email.com", "Budapest");
