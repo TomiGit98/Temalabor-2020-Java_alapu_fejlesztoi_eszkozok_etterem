@@ -32,8 +32,4 @@ public class Meal {
     public Meal() {
 
     }
-
-    public long getId(){
-        return  this.id;
-    }
 }
