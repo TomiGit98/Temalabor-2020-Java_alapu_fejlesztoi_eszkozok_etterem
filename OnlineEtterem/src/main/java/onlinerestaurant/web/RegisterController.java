@@ -30,6 +30,4 @@ public class RegisterController {
         System.out.print(person.getSurName() + " " + person.getFirstName() + " " + person.getPassword() + " " + person.getEmail() + " " + person.getAddress());
         return "redirect:/login";
     }
-
-
 }

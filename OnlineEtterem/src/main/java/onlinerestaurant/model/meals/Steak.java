@@ -14,9 +14,11 @@ public class Steak extends Meal {
 
     private String cooked;
 
-    public Steak(String name, int price, Category category, String cooked) {
-        super(name, price, category);
-        this.cooked=cooked;
+    public Steak(String name, int price, String photoUrl, Category category, String cooked) {
+        super(name, price, photoUrl, category);
+        this.cooked = cooked;
     }
 
+    public Steak() {
+    }
 }

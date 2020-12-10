@@ -20,9 +20,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class ShoppingCartTest {
 
     @Autowired
-    InitDataService initDataService;
-
-    @Autowired
     ShoppingCartService shoppingCartService;
 
     @Autowired
@@ -31,18 +28,16 @@ public class ShoppingCartTest {
     @Autowired
     CategoryRepository categoryRepository;
 
-
-
-    @Before
-    public void init(){
-        initDataService.init();
-    }
-
     @Test
     public void testAddToCart(){
         Person jakabIvan = personRepository.findByFirstName("Ivan");
-        Category Pizzas = categoryRepository.findByName("Pizzas");
-        Pizza pizza = new Pizza("Hawaii Pizza",2990,Pizzas,"Ananasz");
+        Category Pizzas = categoryRepository.findByNameIgnoreCase("Pizzas");
+        Pizza pizza = new Pizza(
+                "Hawaii Pizza",
+                2990,
+                "https://cdn.falatozz.hu/kepek/receptek/000/010/400x/hawaii-pizza.png",
+                Pizzas,
+                "Ananasz");
         shoppingCartService.addToCart(jakabIvan,pizza,3);
         assertTrue(jakabIvan.getShoppingCart().getMeals().get(pizza).intValue() == 3 );
     }

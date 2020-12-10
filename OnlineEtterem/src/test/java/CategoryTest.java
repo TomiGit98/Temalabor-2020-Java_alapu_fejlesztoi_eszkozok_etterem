@@ -12,6 +12,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.transaction.Transactional;
 
+import java.util.List;
+import java.util.Set;
+
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @RunWith(SpringRunner.class)
@@ -20,20 +23,18 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class CategoryTest {
 
     @Autowired
-    InitDataService initDataService;
-
-    @Autowired
     CategoryRepository categoryRepository;
 
-    @Before
-    public void init() {
-        initDataService.init();
-    }
 
     @Test
     public void testCategory() {
-        Category c = categoryRepository.findByName("Pizzas");
+        Category c = categoryRepository.findByNameIgnoreCase("Pizzas");
         assertTrue(!c.getAllMeals().isEmpty());
-        ;
+    }
+
+    @Test
+    public void testAllCategory() {
+        List<Category> categories = categoryRepository.findAll();
+        assertTrue(!categories.isEmpty());
     }
 }

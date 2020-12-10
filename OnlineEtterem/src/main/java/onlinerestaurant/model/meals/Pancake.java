@@ -14,9 +14,11 @@ public class Pancake extends Meal {
 
     private String topping;
 
+    public Pancake() {
+    }
 
-    public Pancake(String name, int price, Category category, String topping) {
-        super(name, price, category);
-        this.topping=topping;
+    public Pancake(String name, int price, String photoUrl, Category category, String topping) {
+        super(name, price, photoUrl, category);
+        this.topping = topping;
     }
 }
