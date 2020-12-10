@@ -38,6 +38,10 @@ public class Category {
         this.meals = meals;
     }
 
+    public long GetId(){
+        return this.id;
+    }
+
     public Set<Meal> getAllMeals(){
         if (this.meals == null)
             this.meals = new HashSet();

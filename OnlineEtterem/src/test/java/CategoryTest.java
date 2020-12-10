@@ -31,9 +31,15 @@ public class CategoryTest {
     }
 
     @Test
-    public void testCategory() {
+    public void testCategoryByName() {
         Category c = categoryRepository.findByName("Pizzas");
         assertTrue(!c.getAllMeals().isEmpty());
         ;
+    }
+
+    @Test
+    public void testCategoryById() {
+        Category c = categoryRepository.findById(5);
+        assertTrue(c.GetId() == 5);
     }
 }

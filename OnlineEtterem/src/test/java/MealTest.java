@@ -42,4 +42,11 @@ public class MealTest {
         assertTrue(pizza!=null);
     }
 
+
+    @Test
+    public void testGetId() {
+        Pizza pizza = (Pizza) mealRepository.findByName("Pizza");
+        assertTrue(pizza.getId() == 9);
+    }
+
 }
