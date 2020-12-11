@@ -27,9 +27,19 @@ public class CategoryTest {
 
 
     @Test
-    public void testCategory() {
-        Category c = categoryRepository.findByNameIgnoreCase("Pizzas");
+    public void testCategoryFindByIgnoreName() {
+        Category c = categoryRepository.findByNameIgnoreCase("Pizzák");
+        System.out.println("ID: " + c.getId());
         assertTrue(!c.getAllMeals().isEmpty());
+        assertTrue(c.getName() == "Pizzák");
+    }
+
+    @Test
+    public void testCategoryFindById() {
+        Category c = categoryRepository.findById(2);
+        assertTrue(!c.getAllMeals().isEmpty());
+        assertTrue(c.getId() == 2);
+        assertTrue(c.getName() == "Pizzák");
     }
 
     @Test

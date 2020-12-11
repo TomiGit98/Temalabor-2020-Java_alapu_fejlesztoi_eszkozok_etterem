@@ -32,15 +32,60 @@ public class PersonTest {
 
 
     @Test
-    public void testRepo(){
-        Person jakabIvan = personRepository.findByFirstName("Ivan");
-        assertTrue(jakabIvan.getSurName().equals("Jabak"));
+    public void testAddUserToRepository(){
+        Person test = personRepository.findByFirstName("Ivan");
+        assertTrue(test.getSurName().equals("Jabak"));
     }
 
     @Test
-    public void testDeleteUser(){
+    public void testFindByFirstNameRepository(){
+        Person test = personRepository.findByFirstName("Ivan");
+        System.out.println("ID: " + test.getId());
+        assertTrue(test.getSurName().equals("Jabak"));
+    }
+
+    @Test
+    public void testFindByIdRepository(){
+        Person test = personRepository.findById(1);
+        assertTrue(test != null);
+        assertTrue(test.getFirstName() == "Ivan");
+    }
+
+    @Test
+    public void testFindByEmailRepository(){
+        Person test = personRepository.findByEmail("jabaki@gmail.com");
+        assertTrue(test != null);
+        assertTrue(test.getEmail() == "jabaki@gmail.com");
+    }
+
+    @Test
+    public void testDeleteUserFromRepository(){
         personService.deleteUser("Jabak","Ivan");
-        Person jakabIvan = personRepository.findByFirstName("Ivan");
-        assertTrue(jakabIvan == null);
+        Person test = personRepository.findByFirstName("Ivan");
+        assertTrue(test == null);
+    }
+
+    @Test
+    public void addNewUserService(){
+        personService.addNewUser("TestFirstName", "TestSurName", "TestPassword", "TestEmail", "TestAddress");
+        Person test = personRepository.findByFirstName("TestFirstName");
+        assertTrue(test.getFirstName() == "TestFirstName");
+    }
+
+    @Test
+    public void deleteUserService(){
+        personService.deleteUser("TestSurName", "TestFirstName");
+        Person testDeleted = personRepository.findByFirstName("TestFirstName");
+        assertTrue(testDeleted == null);
+    }
+
+    @Test
+    public void updateUserService(){
+        personService.addNewUser("TestFirstName", "TestSurName", "TestPassword", "TestEmail", "TestAddress");
+        Person from = personRepository.findByFirstName("TestFirstName");
+        Person to = new Person("FirstNameChanged", from.getSurName(), from.getPassword(), from.getEmail(), from.getAddress());
+        personService.updateUser(from, to);
+        Person p = personRepository.findByFirstName("FirstNameChanged");
+        assertTrue(p.getFirstName() == "FirstNameChanged" && p.getSurName() == from.getSurName() && p.getPassword() == from.getPassword() && p.getEmail() == from.getEmail() && p.getAddress() == from.getAddress());
     }
 }

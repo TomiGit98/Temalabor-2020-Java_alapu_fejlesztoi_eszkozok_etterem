@@ -9,7 +9,7 @@ import java.util.List;
 
 @Component
 public interface MealRepository extends JpaRepository<Meal, Long> {
-    public Meal findById(int id);
+    public Meal findById(long id);
     public Meal findByName(String name);
     public List<Meal> findByCategory(Category category);
 }

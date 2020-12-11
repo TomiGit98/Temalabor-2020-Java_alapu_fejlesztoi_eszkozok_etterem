@@ -33,7 +33,13 @@ public class Category {
         this.meals = meals;
     }
 
+    public String getName(){
+        return this.name;
+    }
 
+    public Long getId(){
+        return id;
+    }
 
     public Set<Meal> getAllMeals(){
         return meals;

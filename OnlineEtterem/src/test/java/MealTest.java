@@ -1,4 +1,5 @@
 import onlinerestaurant.OnlineRestaurantApplication;
+import onlinerestaurant.model.Category;
 import onlinerestaurant.model.Meal;
 import onlinerestaurant.model.meals.Pizza;
 import onlinerestaurant.repository.MealRepository;
@@ -29,8 +30,27 @@ public class MealTest {
 
     @Test
     public void testFindByName() {
-        Pizza pizza = (Pizza) mealRepository.findByName("Pizza");
-        assertTrue(pizza!=null);
+        Pizza pizza = (Pizza) mealRepository.findByName("Szalámis Pizza");
+        assertTrue(pizza != null);
+    }
+
+    @Test
+    public void testFindById() {
+        Pizza pizza = (Pizza) mealRepository.findById(5);
+        assertTrue(pizza != null);
+        assertTrue(pizza.getId() == 5);
+    }
+
+    @Test
+    public void testFindByCategoryRepository() {
+        Meal meal = mealService.findMealById(5);
+        assertTrue(meal != null);
+    }
+
+    @Test
+    public void testFindByCategoryService() {
+        Meal meal = mealService.findMealByName("Szalámis Pizza");
+        assertTrue(meal != null);
     }
 
 }
