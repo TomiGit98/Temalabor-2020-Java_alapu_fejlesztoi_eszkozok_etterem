@@ -9,5 +9,6 @@ public interface CategoryRepository extends JpaRepository<Category, Long> {
     public Category findByNameIgnoreCase(String name);
     public Category findById(long id);
     public List<Category> findAll();
+    public Category save(Category category);
 
 }
