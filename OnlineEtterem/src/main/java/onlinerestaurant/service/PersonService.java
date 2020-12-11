@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class PersonService {
 
@@ -32,5 +34,10 @@ public class PersonService {
             personRepository.delete(p);
             personRepository.save(p2);
         }
+    }
+
+    @Transactional
+    public List<Person> getAllPerson(){
+        return personRepository.findAll();
     }
 }
