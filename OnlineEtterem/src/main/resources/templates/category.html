@@ -15,11 +15,11 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="#">FastFood</a>
+    <a class="navbar-brand" href="/index">FastFood</a>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav nav-fill w-100 mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-                <a class="btn btn-outline-light my-2 my-sm-0 mr-2" href="#">Főoldal <span class="sr-only">(current)</span></a>
+                <a class="btn btn-outline-light my-2 my-sm-0 mr-2" href="/index">Főoldal <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
                 <a class="btn btn-outline-primary my-2 my-sm-0" href="#">Termékek <span class="sr-only">(current)</span></a>
@@ -34,18 +34,20 @@
     </div>
 </nav>
 
-<ul>
-    <div th:each="cat : ${categories}">
-        <span th:text="${cat.name}"></span>
-        <div th:each="meal : ${cat.meals}">
-            <div>
-            <img th:src="@{${meal.photoUrl}}" style="width:304px;height:228px"/>
+<div class="d-flex justify-content-center">
+        <ul>
+            <div th:each="cat : ${categories}">
+                <span th:text="${cat.name}"></span>
+                <div th:each="meal : ${cat.meals}">
+                    <div>
+                    <img th:src="@{${meal.photoUrl}}" style="width:304px;height:228px"/>
+                    </div>
+                    <span th:text="${meal.name}"></span>
+                    <span th:text="${meal.price}"></span>
+                </div>
             </div>
-            <span th:text="${meal.name}"></span>
-            <span th:text="${meal.price}"></span>
-        </div>
-    </div>
-</ul>
+        </ul>
+</div>
 
 </body>
 </html>
