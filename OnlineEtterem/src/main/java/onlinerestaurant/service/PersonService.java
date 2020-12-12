@@ -15,9 +15,15 @@ public class PersonService {
     PersonRepository personRepository;
 
     @Transactional
-    public void addNewUser(String firstname, String surename, String password, String email, String address){
-        Person person = new Person(firstname, surename, password, email, address);
-        personRepository.save(person);
+    public boolean addNewUser(String firstname, String surename, String password, String email, String address){
+        Person p = personRepository.findByEmail(email);
+        if(p == null){
+            Person person = new Person(firstname, surename, password, email, address);
+            personRepository.save(person);
+            return true;
+        }else{
+            return false;
+        }
     }
 
     @Transactional

@@ -3,6 +3,7 @@ package onlinerestaurant.web;
 import lombok.RequiredArgsConstructor;
 import onlinerestaurant.model.Person;
 import onlinerestaurant.repository.PersonRepository;
+import onlinerestaurant.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +20,9 @@ public class LoginController {
     @Autowired
     PersonRepository personRepository;
 
+    @Autowired
+    PersonService personService;
+
     @GetMapping
     String loginGet(Map<String, Object> model){
         model.put("loginPerson", new Person());
@@ -31,7 +35,7 @@ public class LoginController {
         if(personByEmail != null){
             System.out.println("Person found by id: " + person.getEmail());
             if(personByEmail.getPassword().equals(person.getPassword())){
-                return "redirect:/index";
+                return "index";
             }
         }
         System.out.println("Not found: " + person.getEmail());

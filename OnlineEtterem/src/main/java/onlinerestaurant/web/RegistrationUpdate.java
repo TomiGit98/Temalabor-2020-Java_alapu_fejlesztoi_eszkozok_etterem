@@ -12,8 +12,8 @@ import java.util.Map;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("/register")
-public class RegisterController {
+@RequestMapping("/registerUpdate")
+public class RegistrationUpdate {
 
     @Autowired
     PersonRepository personRepository;
@@ -22,20 +22,22 @@ public class RegisterController {
     PersonService personService;
 
     @GetMapping
-    String registerGet(Map<String, Object> model){
+    String registerUpdateGet(Map<String, Object> model){
         model.put("newPerson", new Person());
-        return "register";
+        return "registerUpdate";
     }
 
     @PostMapping
-    public String registerPost(Person person, Map<String, Object> model){
-        boolean success = personService.addNewUser(person.getFirstName(),person.getSurName(), person.getPassword(), person.getEmail(), person.getAddress());
-        if(success){
-            System.out.println("Sikeres regisztráció!");
+    public String registerUpdatePost(Person person, Map<String, Object> model){
+        Person p = personRepository.findByEmail(person.getEmail());
+        if(p != null){
+            Person to = new Person(p.getFirstName(), p.getSurName(), person.getPassword(), p.getEmail(), p.getAddress());
+            personService.updateUser(p, to);
+            System.out.println("Sikeres frissítés!");
             return "redirect:/login";
         }else{
-            System.out.println("Sikertelen regisztráció!");
-            return "redirect:/register";
+            System.out.println("Sikertelen frissítés!");
+            return "redirect:/registerUpdate";
         }
     }
 }
